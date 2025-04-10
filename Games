@@ -1,0 +1,18 @@
+local gameId = game.GameId
+
+if not game:IsLoaded() then
+    game.Loaded:Wait()
+end
+
+local games = {
+    [7489122072] = 'https://raw.githubusercontent.com/gpuu/realscript/refs/heads/main/blood_debt',
+    [1161811078] = 'https://raw.githubusercontent.com/gpuu/realscript/refs/heads/main/sans_vs_chara',
+    [7018190066] = 'https://raw.githubusercontent.com/gpuu/realscript/refs/heads/main/dead_rails',
+    [770538576] = 'https://raw.githubusercontent.com/gpuu/realscript/refs/heads/main/naval_warfare',
+    [601130232] = 'https://raw.githubusercontent.com/gpuu/realscript/refs/heads/main/bee_swarm_simulator',
+}
+
+local url = games[gameId]
+if url then
+    loadstring(game:HttpGet(url))()
+end
